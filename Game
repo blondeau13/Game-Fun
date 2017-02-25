@@ -1,5 +1,13 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <ctime>
+
+/*
+int r;
+srand(time(0));
+r = rand() %3+4;
+*/
 
 using namespace std;
 
@@ -9,6 +17,12 @@ public:
     int MP;
     int SP;
     int SK;
+    int mhp;
+    int matp;
+    int bhp;
+    int batp;
+
+
 int chooseclass() {
     cout << "Choose a class! [K]night, [R]anger, [A]ssassin, or [M]age! " << endl;
     string input;
@@ -58,18 +72,41 @@ int mageclass() {
     SK = 20;
     cout << "You chose mage, your HP is " << HP << ", your MP is " << MP << ", your SP is " << SP << ", and your SK is " << SK <<endl;
 }
-};
 
-class enemy {
-public:
-    int mhp;
-    int bhp;    
+    int magicattack()
+    {
+        int r;
+        srand(time(0));
+        r = rand() % MP;
+        cout << "Your attack is " << r << endl;
+    }
+    int swordattack()
+    {
+        int r;
+        srand(time(0));
+        r = rand() % 10+10;
+        cout << "Your attack is " << r << endl;
+    }
+
 };
 int main()
 {
+    string input;
+
+
     bool running = true;
     Game game;
     game.chooseclass();
+
+    cin >> input;
+    if (input == "e" || input == "E")
+    {
+        game.magicattack();
+    }
+    if (input == "s" || input == "S")
+    {
+        game.swordattack();
+    }
 
     return 0;
 
