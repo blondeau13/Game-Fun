@@ -1,1 +1,78 @@
-hi
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Game {
+public:
+    int HP;
+    int MP;
+    int SP;
+    int SK;
+int chooseclass() {
+    cout << "Choose a class! [K]night, [R]anger, [A]ssassin, or [M]age! " << endl;
+    string input;
+    cin >> input;
+    if (input == "K" || input == "k")
+    {
+        knightclass();
+    }
+    else if (input == "R" || input == "r")
+    {
+        rangerclass();
+    }
+    else if (input == "A" || input == "a")
+    {
+        assassinclass();
+    }
+    else if (input == "M" || input == "m")
+    {
+        mageclass();
+    }
+    }
+int knightclass() {
+    HP = 200;
+    MP = 10;
+    SP = 80;
+    SK = 5;
+    cout << "You chose knight, your HP is " << HP << ", your MP is " << MP << ", your SP is " << SP << ", and your SK is " << SK <<endl;
+}
+int rangerclass() {
+    HP = 100;
+    MP = 0;
+    SP = 100;
+    SK = 50;
+    cout << "You chose ranger, your HP is " << HP << ", your MP is " << MP << ", your SP is " << SP << ", and your SK is " << SK <<endl;
+}
+int assassinclass() {
+    HP = 70;
+    MP = 0;
+    SP = 100;
+    SK = 100;
+    cout << "You chose assassin, your HP is " << HP << ", your MP is " << MP << ", your SP is " << SP << ", and your SK is " << SK <<endl;
+}
+int mageclass() {
+    HP = 50;
+    MP = 100;
+    SP = 50;
+    SK = 20;
+    cout << "You chose mage, your HP is " << HP << ", your MP is " << MP << ", your SP is " << SP << ", and your SK is " << SK <<endl;
+}
+};
+
+class enemy {
+public:
+    int mhp;
+    int bhp;    
+};
+int main()
+{
+    bool running = true;
+    Game game;
+    game.chooseclass();
+
+    return 0;
+
+}
+
+
